@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  app:
+    image: 389798/link-image
+    env_file:
+      - .env
+    build:
+      context: ./
+    container_name: link-container
+    ports:
+      - 3000:3000
+    depends_on:
+      - mongo
+    volumes:
+      - ./src/link
+    networks:
+      - link-network
+
+  mongo:
+    image: mongo
+    container_name: mongo-link-container
+    env_file:
+      - .env
+    ports:
+      - 27017:27017
+    environments:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
+    networks:
+      - link-network
+
+networks:
+  link-network:
+    driver: bridge
