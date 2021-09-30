@@ -10,6 +10,9 @@ export class Link {
 
   @Prop({ type: String, required: true })
   short_url: string;
+
+  @Prop({ type: String })
+  custom_link: string;
 }
 
 export const LinkSchema = SchemaFactory.createForClass(Link);

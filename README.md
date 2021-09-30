@@ -13,8 +13,31 @@
   (GET) - /link/all - Get all links
   (GET) - /link/current/:title - get current link by her title
   (POST) - /link/create - Create a new link
+  ()
   (PUT) - /link/update/:title - Update current link by her title
   (DELETE) - /link/delete/:title - Delete a current link by her title
+```
+
+## Docker
+
+```bash
+  # build docker image
+  $ docker buid -t 389798/link-image .
+
+  # run link-container(makefile)
+  $ make link-up
+
+  # run link-container
+  $ docker run --rm -p 3000:3000 -d --name link-container 389798/link-image
+
+  # run mongo-link-container
+  $ docker run --rm -p 27017:27017 -d --name mongo-link-container -e MONGO_INITDB_ROOT_USERNAME=${MONGO_USER} -e MONGO_INITDB_ROOT_PASSWORD=${MONGO_PASSWORD} mongo
+
+  # Create network for containers
+  $ docker network create link-network
+
+  # run couple containers
+  $ docker-compose up
 ```
 
 ## Description
