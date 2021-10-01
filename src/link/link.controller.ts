@@ -8,10 +8,8 @@ import {
   Post,
   Body,
   Param,
-  Response,
   UseGuards,
   Res,
-  UseInterceptors,
 } from '@nestjs/common';
 import { ApiOperation, ApiResponse } from '@nestjs/swagger';
 import CreateLinkDTO from './dto/create-link.dto';

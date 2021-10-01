@@ -16,3 +16,8 @@ double-up:
 	docker-compose up -d 
 double-down: 
 	docker-compose down
+
+controller-test:
+  npm run test link.controller.ts
+service-test:
+  npm run test link.service.ts 

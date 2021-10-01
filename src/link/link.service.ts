@@ -22,7 +22,7 @@ export class LinkService {
   async create_link(dto: CreateLinkDTO) {
     await this.check_link(dto.url);
 
-    const short_url = this.generate_short_url(dto.url);
+    const short_url = generate(dto.url);
 
     return this.linkModel.create({ ...dto, short_url: short_url });
   }
@@ -30,7 +30,7 @@ export class LinkService {
   async update_current_link(title: string, dto: CreateLinkDTO) {
     await this.check_link(dto.url);
 
-    const short_url = this.generate_short_url(dto.url);
+    const short_url = generate(dto.url);
 
     const current_link = await this.get_current_link(title);
 
@@ -63,9 +63,5 @@ export class LinkService {
         HttpStatus.BAD_REQUEST,
       );
     }
-  }
-
-  generate_short_url(short_url: string) {
-    return generate(short_url);
   }
 }

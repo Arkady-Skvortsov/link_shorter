@@ -12,8 +12,8 @@
 ```
   (GET) - /link/all - Get all links
   (GET) - /link/current/:title - get current link by her title
+  (GET) - /link/:title - page for test link and redirect on the current full url
   (POST) - /link/create - Create a new link
-  ()
   (PUT) - /link/update/:title - Update current link by her title
   (DELETE) - /link/delete/:title - Delete a current link by her title
 ```
@@ -26,6 +26,8 @@
 
   # run link-container(makefile)
   $ make link-up
+  # If make command show to you error like '***...some text' it means, that you need go to this file and (if it's VS Code)
+  # Find a button into footer - "Spaces: 2" click on her and choose 'Convert indentation to Tabs' and after that - you can use make commands
 
   # run link-container
   $ docker run --rm -p 3000:3000 -d --name link-container 389798/link-image

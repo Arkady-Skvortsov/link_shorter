@@ -9,9 +9,11 @@ import { LinkModule } from './link/link.module';
       isGlobal: true,
       envFilePath: '.env',
     }),
+
     MongooseModule.forRoot(
-      `mongodb+srv://Arkadiy:rambler555@link-cluster.c3hu3.mongodb.net/link?retryWrites=true&w=majority`,
+      `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@link-cluster.c3hu3.mongodb.net/link?retryWrites=true&w=majority`,
     ),
+
     LinkModule,
   ],
 })

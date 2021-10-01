@@ -1,8 +1,8 @@
-FROM node:14
+FROM node:latest
 
 WORKDIR /linkapp
 
-COPY package*.json / 
+COPY package*.json ./ 
 
 RUN npm install
 
