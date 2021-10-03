@@ -12,7 +12,7 @@
 ```
   (GET) - /link/all - Get all links
   (GET) - /link/current/:title - get current link by her title
-  (GET) - /link/:title - page for test link and redirect on the current full url
+  (GET) - /link/redirect/:title - page for test link and redirect on the current full url
   (POST) - /link/create - Create a new link
   (PUT) - /link/update/:title - Update current link by her title
   (DELETE) - /link/delete/:title - Delete a current link by her title
